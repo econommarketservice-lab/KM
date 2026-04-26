@@ -1,0 +1,2687 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Новый Континент — Каталог продукции 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face {
+    font-family: 'PT Serif Local';
+    src: local('PT Serif');
+}
+
+:root {
+    /* Палитра Нового Континента — оранжевый бренд + тёплый кремовый */
+    --bg: #f6efe2;            /* кремовый фон страницы */
+    --bg-warm: #f0e4cf;       /* тёплый акцент бежевый */
+    --paper: #faf5e9;         /* светлая бумага карточки */
+    --ink: #2b1d11;           /* основной тёмный шоколад */
+    --ink-soft: #5b4632;      /* мягкий тёмный для подписей */
+    --ink-muted: #8a755e;     /* приглушённый бежево-коричневый */
+    --brand: #e7b045;         /* фирменный оранжевый/охра НК */
+    --brand-deep: #c8902a;    /* насыщенная охра */
+    --accent: #7a5530;        /* тёплый шоколад для акцентов */
+    --rule: #c9b896;          /* линейки */
+    --rule-soft: #ddd0b4;     /* мягкие линейки */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    background: #ddd2bd;
+    font-family: 'Cormorant Garamond', 'PT Serif', 'Times New Roman', serif;
+    color: var(--ink);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ===== A4 PAGE ===== */
+.page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--bg);
+    margin: 8mm auto;
+    box-shadow: 0 4mm 20mm rgba(0,0,0,0.18);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+}
+
+.page:last-child {
+    page-break-after: auto;
+}
+
+@media print {
+    html, body { background: white; margin: 0; padding: 0; }
+    .page { margin: 0; box-shadow: none; }
+    @page { size: A4; margin: 0; }
+}
+
+/* ===== ТИПОГРАФИКА ===== */
+.serif        { font-family: 'Cormorant Garamond', 'PT Serif', serif; }
+.serif-display{ font-family: 'Playfair Display', 'PT Serif', serif; }
+.sans         { font-family: 'Manrope', 'Helvetica Neue', sans-serif; letter-spacing: 0.02em; }
+
+/* ===== ОБЛОЖКА ===== */
+.cover {
+    background:
+        radial-gradient(ellipse at 20% 10%, rgba(231,176,69,0.18), transparent 55%),
+        radial-gradient(ellipse at 90% 90%, rgba(122,85,48,0.20), transparent 55%),
+        linear-gradient(180deg, #f6efe2 0%, #ecdcbf 100%);
+    padding: 18mm;
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.cover-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-top: 0.5pt solid var(--accent);
+    padding-top: 2.5mm;
+    width: 40mm;
+}
+
+.cover-year {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: var(--accent);
+}
+
+.cover-logo {
+    margin-top: 14mm;
+    width: 72mm;
+}
+.cover-logo svg { width: 100%; height: auto; }
+
+.cover-title {
+    font-family: 'Playfair Display', 'PT Serif', serif;
+    font-size: 72pt;
+    line-height: 0.95;
+    color: var(--ink);
+    margin-top: 22mm;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    max-width: 170mm;
+}
+.cover-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.cover-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18pt;
+    color: var(--ink-soft);
+    margin-top: 10mm;
+    max-width: 130mm;
+    line-height: 1.25;
+}
+
+.cover-divider {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 0.5pt solid var(--accent);
+    padding-top: 4mm;
+}
+
+.cover-meta {
+    font-family: 'Manrope', sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+.cover-meta strong { color: var(--ink); font-weight: 600; }
+
+/* Декоративный орнамент-колосок */
+.wheat {
+    color: var(--brand-deep);
+    font-size: 14pt;
+    letter-spacing: 0.5em;
+}
+
+/* ===== РАЗВОРОТ-ИНТРО (БРЕНД-СТРАНИЦА) ===== */
+.intro {
+    padding: 22mm 22mm 18mm;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8mm;
+}
+
+.intro-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32pt;
+    line-height: 1.1;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    max-width: 165mm;
+    margin-bottom: 10mm;
+}
+.intro-title em { font-style: italic; color: var(--accent); }
+
+.intro-rule {
+    width: 24mm;
+    height: 0.5pt;
+    background: var(--brand-deep);
+    margin-bottom: 8mm;
+}
+
+.intro-body {
+    columns: 2;
+    column-gap: 8mm;
+    font-family: 'Cormorant Garamond', 'PT Serif', serif;
+    font-size: 12pt;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 170mm;
+}
+.intro-body p { margin-bottom: 4mm; orphans: 3; widows: 3; }
+.intro-body .dropcap {
+    font-family: 'Playfair Display', serif;
+    font-size: 36pt;
+    float: left;
+    line-height: 0.9;
+    margin: 1mm 2mm -1mm 0;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.intro-values {
+    margin-top: 10mm;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6mm;
+    border-top: 0.5pt solid var(--rule);
+    padding-top: 8mm;
+}
+.intro-value {
+    font-family: 'Manrope', sans-serif;
+}
+.intro-value-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22pt;
+    color: var(--brand-deep);
+    line-height: 1;
+}
+.intro-value-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 2.5mm;
+    line-height: 1.35;
+}
+
+/* ===== СОДЕРЖАНИЕ ===== */
+.toc {
+    padding: 22mm 22mm 30mm; /* нижний 30mm — место под колонтитул */
+    display: flex;
+    flex-direction: column;
+}
+
+.toc-header {
+    border-bottom: 0.5pt solid var(--accent);
+    padding-bottom: 6mm;
+    margin-bottom: 10mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.toc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32pt;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.toc-title em { font-style: italic; color: var(--accent); }
+.toc-meta {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.toc-list { display: flex; flex-direction: column; }
+
+.toc-row {
+    display: grid;
+    grid-template-columns: 14mm 1fr auto 14mm;
+    align-items: baseline;
+    gap: 4mm;
+    padding: 3.6mm 0;
+    border-bottom: 0.25pt solid var(--rule-soft);
+}
+.toc-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16pt;
+    color: var(--brand-deep);
+    line-height: 1;
+}
+.toc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16pt;
+    color: var(--ink);
+    font-weight: 500;
+}
+.toc-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: var(--ink-muted);
+    margin-left: 6mm;
+}
+.toc-page {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    text-align: right;
+}
+
+/* ===== ЗАГОЛОВОК КАТЕГОРИИ ===== */
+.cat-header {
+    padding: 18mm 0 6mm;
+    display: flex;
+    align-items: baseline;
+    gap: 8mm;
+    border-bottom: 0.5pt solid var(--rule);
+    margin: 0 18mm 8mm;
+}
+
+.cat-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 36pt;
+    line-height: 1;
+    color: var(--brand-deep);
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.cat-divider {
+    width: 0.5pt;
+    background: var(--rule);
+    align-self: stretch;
+    flex-shrink: 0;
+    /* визуально центрируем линию по высоте текста */
+    margin: 4mm 0;
+}
+
+.cat-text {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+}
+.cat-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36pt;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+.cat-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13pt;
+    color: var(--ink-muted);
+    margin-top: 3mm;
+}
+
+/* Хедер на страницах продолжения категории */
+.cat-runner {
+    padding: 12mm 18mm 4mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 0.25pt solid var(--rule-soft);
+    margin: 0 0 8mm 0;
+}
+.cat-runner-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18pt;
+    color: var(--ink);
+    font-weight: 500;
+}
+.cat-runner-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: var(--ink-muted);
+}
+
+/* ===== СЕТКА ТОВАРОВ 3×3 ===== */
+.grid {
+    padding: 0 18mm 22mm; /* нижний отступ 22mm — резерв для колонтитула */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5mm 6mm;
+    align-content: start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.card-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 0.88;
+    background: var(--paper);
+    border-radius: 1.5mm;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5mm;
+    position: relative;
+}
+.card-img-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 95%, rgba(122,85,48,0.08), transparent 60%);
+    pointer-events: none;
+}
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+.card-img-wrap.clean img {
+    mix-blend-mode: normal;
+}
+.card-img-wrap.baseline {
+    align-items: flex-end;
+    padding-bottom: 0.5mm;
+}
+.card-img-empty {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 9pt;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 11pt;
+    line-height: 1.15;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 1.2mm;
+    letter-spacing: -0.005em;
+    min-height: 12.5pt;
+}
+
+.card-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8.8pt;
+    line-height: 1.28;
+    color: var(--ink-soft);
+    margin-bottom: 2mm;
+    flex-grow: 1;
+    min-height: 22pt;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 0.25pt solid var(--rule-soft);
+    padding-top: 1.5mm;
+}
+.card-weight {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 9.5pt;
+    color: var(--ink-muted);
+}
+.card-price {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+}
+.card-price .currency {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-left: 1mm;
+}
+.card-code {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6pt;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    margin-top: 0.8mm;
+}
+
+/* ===== НИЖНИЙ КОЛОНТИТУЛ ===== */
+.foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 14mm;
+    padding: 4mm 18mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 7pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    background: var(--bg);
+    border-top: 0.25pt solid var(--rule-soft);
+}
+.foot-mark {
+    color: var(--brand-deep);
+    letter-spacing: 0.4em;
+}
+.foot-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 10pt;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink-soft);
+}
+
+/* ===== ФИНАЛ-СТРАНИЦА КОНТАКТЫ ===== */
+.contact {
+    padding: 22mm;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse at 80% 20%, rgba(231,176,69,0.18), transparent 55%),
+        linear-gradient(180deg, #f6efe2 0%, #ecdcbf 100%);
+}
+
+.contact-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6mm;
+}
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52pt;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 5mm;
+    letter-spacing: -0.01em;
+}
+.contact-title em { font-style: italic; color: var(--accent); }
+.contact-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16pt;
+    color: var(--ink-soft);
+    max-width: 130mm;
+    margin-bottom: 14mm;
+    line-height: 1.3;
+}
+
+.contact-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12mm;
+    border-top: 0.5pt solid var(--accent);
+    padding-top: 10mm;
+    margin-bottom: 14mm;
+}
+.contact-block-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 3mm;
+}
+.contact-block-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 16pt;
+    color: var(--ink);
+    line-height: 1.3;
+    font-weight: 500;
+}
+.contact-block-value em { font-style: italic; color: var(--accent); }
+
+.contact-order {
+    border-top: 0.5pt solid var(--rule);
+    padding-top: 8mm;
+}
+.contact-order-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink);
+    margin-bottom: 4mm;
+}
+.contact-order-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6mm 10mm;
+}
+.contact-order-field {
+    border-bottom: 0.5pt solid var(--ink-muted);
+    padding-bottom: 2mm;
+}
+.contact-order-field-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 7pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.contact-terms {
+    border-top: 0.5pt solid var(--rule);
+    padding-top: 8mm;
+    margin-bottom: 8mm;
+}
+.contact-terms-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink);
+    margin-bottom: 6mm;
+}
+.contact-terms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8mm;
+}
+.contact-terms-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+}
+.contact-terms-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 28pt;
+    color: var(--brand-deep);
+    line-height: 1;
+}
+.contact-terms-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    line-height: 1.35;
+    color: var(--ink-soft);
+}
+
+.contact-foot {
+    margin-top: auto;
+    padding-top: 8mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 0.5pt solid var(--accent);
+}
+.contact-logo {
+    width: 60mm;
+    line-height: 0;
+}
+.contact-logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.contact-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 1.4;
+    /* выравниваем нижнюю линию текста с нижней линией логотипа */
+    padding-bottom: 1mm;
+}
+
+/* Декоративная виньетка */
+.flourish {
+    text-align: center;
+    color: var(--brand-deep);
+    font-size: 11pt;
+    letter-spacing: 0.6em;
+    padding: 6mm 0;
+}
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <header class="cover-top">
+    <div class="cover-eyebrow">Каталог продукции</div>
+    <div class="cover-year">издание 2026</div>
+  </header>
+
+  <div class="cover-logo"><svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.17 56.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e7b045;
+      }
+
+      .cls-2 {
+        fill: #000806;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <g>
+        <path class="cls-1" d="M56.64,26.58c-.05-.86-.15-1.72-.31-2.66-.42-2.8-1.3-5.57-2.61-8.18C48.93,6.04,39.2,0,28.35,0c-6.71,0-13.2,2.38-18.3,6.71-1.81,1.52-3.4,3.24-4.75,5.12-2.09,2.9-3.61,6.19-4.47,9.72C.27,23.75,0,26.03,0,28.35c0,2.53.32,4.97.96,7.31.75,2.8,1.91,5.43,3.43,7.82,2.43,3.84,5.77,7.06,9.7,9.36,4.2,2.45,9.07,3.85,14.25,3.85,1.3,0,2.56-.08,3.81-.26,4.73-.61,9.09-2.4,12.76-5.04,6.87-4.92,11.42-12.88,11.76-22,.02-.32.02-.68.02-1.05,0-.6-.02-1.18-.05-1.77h0ZM52.26,29.24c-.11,3.35-.92,6.51-2.28,9.36-1.86,3.89-4.71,7.19-8.26,9.57-1,.7-2.04,1.3-3.14,1.81h-.02c-.75.36-1.51.66-2.28.94-1.07.37-2.17.68-3.3.89-.37.08-.75.15-1.12.2-1.15.18-2.32.26-3.5.26-5.04,0-9.72-1.56-13.57-4.23-3.09-2.14-5.67-5.01-7.48-8.33-.54-.99-1.01-2.01-1.38-3.08h-.02c-.96-2.59-1.47-5.38-1.47-8.29,0-1.3.15-2.56.34-3.81.03.13.05.27.08.39l.88,2.75c.23.71,1.02,1.39,1.76,1.51l4.08.63c.7.1,1.43.7,1.7,1.36.03.05.05.11.07.16l.37,1.25c.23.71-.08,1.67-.7,2.11l-.86.63c-.6.44-1.25,1.39-1.43,2.12l-.42,1.7-.21.84c-.18.73.21,1.62.86,1.98.66.36,1.81.75,2.54.87h.03c.73.13,1.62.68,1.98,1.2.03.05.08.11.11.18.36.55.84,1.39,1.13,2.01l1.28,2.53c.32.68,1.17,1.23,1.86,1.23s1.15-.62,1.04-1.36l-.6-3.82c-.11-.75.11-1.88.5-2.53l.66-1.1c.41-.65.68-1.78.65-2.54l-.1-1.78c-.05-.75-.65-1.6-1.35-1.9l-2.53-1.05c-.7-.29-1.46-1.12-1.69-1.83l-.63-1.94c-.15-.45-.29-1.12-.36-1.72-.07-.34-.1-.68-.1-.94v-.07c-.02-.75.39-1.83.89-2.38l.32-.36c.21-.24.45-.36.66-.37.29-.02.55.18.7.55.26.65.71,1.07,1.02.92.32-.14,1.68-1.82,2.37-2.59.38-.43.76-1.03.89-1.19.51-.62.66-1.06.85-1.79l1.15-4.26c.19-.73-.11-1.73-.68-2.22l-.73-.62c-.57-.48-1.46-1.33-1.99-1.86l-.19-.19s-.07-.07-.11-.1c-.55-.49-1.52-.87-2.22-.87h-4.11c-.32,0-.81-.02-1.31,0,1.57-1.33,3.3-2.45,5.17-3.34.02-.02.03-.02.05-.02,3.11-1.47,6.58-2.3,10.22-2.3,8,0,15.1,3.95,19.42,9.99l-5.2-.7c-.44-.07-.97.05-1.44.27-.32.15-.82.4-1.02.64,0,0-2.21,1.59-2.77,2.29-.57.72-1.7,3.02-1.7,3.02l-.15.32c-.47.58-.8,1.68-.84,2.43l-.13,1.91c-.05.75.48,1.12,1.03.62l.85-.43c.55-.5,1.56-.96,2.3-.96l.6.03c.76,0,1.35.13,1.52.86l.16.63c.18.73.11,1.73-.13,2.25-.26.5-1.07.88-1.83.79l-1.99-.18c-.75-.08-1.77.31-2.28.87l-.66.73c-.11.13-.23.29-.32.47-.32.57-.5,1.33-.42,1.89l.27,1.88c.02.18.08.37.16.57.23.62.66,1.26,1.12,1.6l.94.68c.6.45,1.09,1.43,1.09,2.19l-.07,4.39c-.02.65.36,1.39.84,1.76.08.07.16.11.24.16.62.31,1.52.1,2.03-.47l.91-1.01c.5-.57,1.13-1.6,1.41-2.3,0,0,.58-1.52.58-1.83,0-.29.5-.54.5-.54.68-.31,1.46-.99,1.72-1.51.19-.41.47-.99.66-1.47.06-.13.11-.26.14-.37.18-.49.81-1.28,1.41-1.73l.1-.08c.6-.47,1.28-.69,1.69-1.33l.76-.94c.11-.18.12-.45.14-.58,0-.06-.18-.42-.2-.5-.1-.21-.68-.41-1.1-.33l-.77-.15c-.75-.13-.76-.03-1.37-.47l-.58-.41c-.61-.42-1.02-1.02-.91-1.31.13-.29.78-.23,1.43.14l.49.28c.65.37,1.8.63,2.54.58l.11-.02.5-.03c.75-.07,1.54-.44,1.75-.84.16-.31.29-.75.36-1.09.03.41.05.81.05,1.23,0,.29,0,.58-.01.89h0Z"/>
+        <path class="cls-1" d="M45.42,42.52c-.08.49-.42,1.17-.75,1.51-.29.32-.76.68-1.09.84-.03.02-.07.03-.1.05-.34.15-.66.13-.73-.03-.05-.15-.05-.49.02-.73.07-.26.47-.92.91-1.49.34-.45.78-.83,1.1-.95.08-.05.16-.07.23-.07.29,0,.49.39.41.87h0Z"/>
+      </g>
+      <g>
+        <g>
+          <path class="cls-2" d="M73.33,40.16l-1.53,1.64v3.62s-4.06,0-4.06,0v-14.5s4.06,0,4.06,0v6.03s5.61-6.03,5.61-6.03h4.51s-5.92,6.42-5.92,6.42l6.23,8.08h-4.76s-4.14-5.26-4.14-5.26Z"/>
+          <path class="cls-2" d="M85.89,44.73c-1.22-.65-2.18-1.55-2.88-2.69-.7-1.15-1.05-2.44-1.05-3.87,0-1.44.35-2.73,1.05-3.87.7-1.15,1.66-2.04,2.88-2.69,1.22-.65,2.6-.97,4.13-.97,1.53,0,2.91.32,4.13.97,1.22.65,2.18,1.55,2.88,2.69.7,1.15,1.05,2.44,1.05,3.87,0,1.44-.35,2.73-1.05,3.87-.7,1.15-1.66,2.04-2.88,2.69-1.22.65-2.6.97-4.13.97-1.53,0-2.91-.32-4.13-.97ZM92.01,41.79c.59-.35,1.06-.83,1.41-1.46.34-.63.52-1.35.52-2.16,0-.81-.17-1.54-.52-2.16-.35-.63-.81-1.11-1.41-1.46-.59-.34-1.26-.52-1.99-.52-.73,0-1.39.17-1.99.52-.59.35-1.06.83-1.41,1.46-.35.63-.52,1.35-.52,2.16,0,.81.17,1.54.52,2.16.35.63.81,1.11,1.41,1.46.59.35,1.26.52,1.99.52.73,0,1.39-.17,1.99-.52Z"/>
+          <path class="cls-2" d="M114.06,30.92v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M128.85,34.16h-4.43s0,11.25,0,11.25h-4.04s0-11.24,0-11.24h-4.45s0-3.25,0-3.25h12.92s0,3.25,0,3.25Z"/>
+          <path class="cls-2" d="M130.73,30.91h4.04s0,8.51,0,8.51l5.98-8.51h3.85s0,14.5,0,14.5h-4.04s0-8.49,0-8.49l-5.96,8.49h-3.87s0-14.5,0-14.5Z"/>
+          <path class="cls-2" d="M161.5,30.91v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M176.25,42.23v3.17s-11.64,0-11.64,0v-14.5s11.37,0,11.37,0v3.17s-7.31,0-7.31,0v2.44s6.44,0,6.44,0v3.06s-6.44,0-6.44,0v2.65s7.58,0,7.58,0Z"/>
+          <path class="cls-2" d="M192.38,30.9v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M207.17,34.15h-4.43s0,11.25,0,11.25h-4.04s0-11.24,0-11.24h-4.45s0-3.25,0-3.25h12.92s0,3.25,0,3.25Z"/>
+        </g>
+        <g>
+          <path class="cls-2" d="M81.53,11.64v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M87.63,25.46c-1.22-.65-2.18-1.55-2.88-2.69-.7-1.15-1.05-2.44-1.05-3.87,0-1.44.35-2.73,1.05-3.87.7-1.15,1.66-2.04,2.88-2.69,1.22-.65,2.6-.97,4.13-.97s2.91.32,4.13.97c1.22.65,2.18,1.55,2.88,2.69.7,1.15,1.05,2.44,1.05,3.87,0,1.44-.35,2.73-1.05,3.87-.7,1.15-1.66,2.04-2.88,2.69-1.22.65-2.6.97-4.13.97-1.53,0-2.91-.32-4.13-.97ZM93.75,22.51c.59-.35,1.06-.83,1.41-1.46.34-.63.52-1.35.52-2.16,0-.81-.17-1.54-.52-2.16-.35-.63-.81-1.11-1.41-1.46-.59-.34-1.26-.52-1.99-.52-.73,0-1.39.17-1.99.52-.59.35-1.06.83-1.41,1.46-.35.63-.52,1.35-.52,2.16,0,.81.17,1.54.52,2.16.35.63.81,1.11,1.41,1.46.59.35,1.26.52,1.99.52.73,0,1.39-.17,1.99-.52Z"/>
+          <path class="cls-2" d="M114.53,19.84c.45.58.67,1.3.67,2.15,0,1.28-.5,2.3-1.5,3.03-1,.74-2.42,1.11-4.26,1.11h-7.43s0-14.49,0-14.49h7.04c1.74,0,3.09.33,4.05.98.96.66,1.44,1.58,1.44,2.79,0,.7-.17,1.33-.51,1.86-.34.54-.82.97-1.46,1.28.86.28,1.51.7,1.96,1.28ZM106.05,17.44h2.61c1.16,0,1.74-.48,1.74-1.43,0-.95-.58-1.43-1.74-1.43h-2.61s0,2.86,0,2.86ZM111.06,21.68c0-.98-.59-1.47-1.78-1.47h-3.23s0,2.98,0,2.98h3.23c1.19,0,1.78-.5,1.78-1.51Z"/>
+          <path class="cls-2" d="M128.93,17.44c.97.79,1.45,1.97,1.45,3.53,0,1.67-.54,2.95-1.61,3.83-1.08.88-2.57,1.33-4.49,1.33h-6.85s0-14.49,0-14.49h4.04s0,4.62,0,4.62h3.35c1.78,0,3.15.4,4.12,1.19ZM125.65,22.63c.41-.37.61-.9.61-1.57,0-1.26-.75-1.88-2.26-1.88h-2.55s0,4.02,0,4.02h2.55c.69,0,1.24-.19,1.65-.56ZM131.97,11.63h4.04s0,14.5,0,14.5h-4.04s0-14.5,0-14.5Z"/>
+          <polygon class="cls-2" points="139.14 11.63 143.18 11.63 143.18 20.14 149.16 11.63 153.01 11.63 153.01 26.13 148.98 26.13 148.98 17.64 143.01 26.13 139.14 26.13 139.14 11.63"/>
+          <polygon class="cls-2" points="144.92 9.84 146.8 4.82 151.11 4.82 147.35 9.84 144.92 9.84"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg></div>
+
+  <h1 class="cover-title">Вкус,<br>к&nbsp;которому<br><em>возвращаются</em></h1>
+
+  <p class="cover-tagline">Свежая выпечка, авторские десерты<br>и&nbsp;готовая кулинария&nbsp;— каждый день.</p>
+
+  <div style="flex-grow:1"></div>
+
+  <footer class="cover-divider">
+    <div class="cover-meta">с&nbsp;<strong>2006&nbsp;года</strong></div>
+    <div class="wheat">— ❋ —</div>
+    <div class="cover-meta">для партнёров &nbsp;·&nbsp; <strong>HoReCa</strong></div>
+  </footer>
+</section>
+
+
+<section class="page intro">
+  <div class="intro-eyebrow">— О нас</div>
+  <h2 class="intro-title">От&nbsp;одного магазина<br>в&nbsp;2006&nbsp;году&nbsp;— до&nbsp;<em>сети из&nbsp;14&nbsp;точек</em><br>и&nbsp;собственного ресторана.</h2>
+  <div class="intro-rule"></div>
+
+  <div class="intro-body">
+    <p>«Новый Континент» начинался в&nbsp;2006&nbsp;году с&nbsp;одного магазина. Шаг за&nbsp;шагом мы&nbsp;собрали под одной крышей пекарню, кондитерскую и&nbsp;кулинарию&nbsp;— чтобы у&nbsp;покупателя на&nbsp;одной полке был и&nbsp;тёплый хлеб с&nbsp;утра, и&nbsp;десерт к&nbsp;вечернему чаю, и&nbsp;готовый ужин по&nbsp;дороге домой.</p>
+    <p>Сегодня сеть&nbsp;— это <strong>3&nbsp;магазина</strong>, <strong>11&nbsp;фирменных булочных</strong> и&nbsp;<strong>собственный ресторан</strong> в&nbsp;Жлобине. Всё, что вы&nbsp;видите в&nbsp;этом каталоге, мы&nbsp;печём и&nbsp;готовим сами на&nbsp;собственном производстве и&nbsp;каждый день поставляем в&nbsp;свои точки. Тем&nbsp;же транспортом&nbsp;— и&nbsp;нашим партнёрам.</p>
+    <p>Работаем по&nbsp;традиционным рецептам и&nbsp;ремесленным технологиям. Хлеб&nbsp;— на&nbsp;натуральной закваске, кремы&nbsp;— на&nbsp;живом сливочном масле и&nbsp;сыре маскарпоне, тесто для&nbsp;круассанов&nbsp;— ламинированное вручную. Без&nbsp;улучшителей, заменителей и&nbsp;лишней химии.</p>
+    <p>Производство собственное, поставки ежедневные. Для&nbsp;партнёров&nbsp;— скидка 10%, гибкий ассортимент и&nbsp;индивидуальные условия.</p>
+  </div>
+
+  <div class="intro-values">
+    <div class="intro-value">
+      <div class="intro-value-num">2006</div>
+      <div class="intro-value-label">год<br>основания</div>
+    </div>
+    <div class="intro-value">
+      <div class="intro-value-num">14</div>
+      <div class="intro-value-label">точек<br>в сети</div>
+    </div>
+    <div class="intro-value">
+      <div class="intro-value-num">118</div>
+      <div class="intro-value-label">позиций<br>в каталоге</div>
+    </div>
+    <div class="intro-value">
+      <div class="intro-value-num">−10%</div>
+      <div class="intro-value-label">партнёрская<br>скидка</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Новый Континент &nbsp;·&nbsp; пекарня · кондитерская · кулинария</span>
+    <span class="foot-mark">— ❋ —</span>
+    <span class="foot-num">02</span>
+  </div>
+</section>
+
+
+<section class="page toc">
+  <header class="toc-header">
+    <h2 class="toc-title">С<em>о</em>держание</h2>
+    <div class="toc-meta">13 категорий · 118 позиций</div>
+  </header>
+  <div class="toc-list">
+    
+    <div class="toc-row">
+      <div class="toc-num">01</div>
+      <div>
+        <span class="toc-name">Хлеб</span>
+        <span class="toc-sub">— основа стола</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 04</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">02</div>
+      <div>
+        <span class="toc-name">Торты</span>
+        <span class="toc-sub">— праздник в каждом срезе</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 06</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">03</div>
+      <div>
+        <span class="toc-name">Чизкейки</span>
+        <span class="toc-sub">— нежность в чистом виде</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 08</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">04</div>
+      <div>
+        <span class="toc-name">Тарталетки</span>
+        <span class="toc-sub">— хрустящая основа</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 09</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">05</div>
+      <div>
+        <span class="toc-name">Эклеры</span>
+        <span class="toc-sub">— хрустящая нежность</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 11</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">06</div>
+      <div>
+        <span class="toc-name">Пирожные</span>
+        <span class="toc-sub">— штучные радости</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 12</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">07</div>
+      <div>
+        <span class="toc-name">Десерты</span>
+        <span class="toc-sub">— маленькие шедевры</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 14</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">08</div>
+      <div>
+        <span class="toc-name">Рулеты</span>
+        <span class="toc-sub">— слой за слоем</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 17</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">09</div>
+      <div>
+        <span class="toc-name">Макароны</span>
+        <span class="toc-sub">— цветная радуга вкусов</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 18</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">10</div>
+      <div>
+        <span class="toc-name">Моти</span>
+        <span class="toc-sub">— японская традиция</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 21</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">11</div>
+      <div>
+        <span class="toc-name">Круассаны</span>
+        <span class="toc-sub">— хруст по-французски</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 22</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">12</div>
+      <div>
+        <span class="toc-name">Выпечка</span>
+        <span class="toc-sub">— тёплая классика</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 24</div>
+    </div>
+    <div class="toc-row">
+      <div class="toc-num">13</div>
+      <div>
+        <span class="toc-name">Стритфуд</span>
+        <span class="toc-sub">— сытные перекусы</span>
+      </div>
+      <div></div>
+      <div class="toc-page">с. 26</div>
+    </div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div class="foot">
+    <span>Каталог продукции 2026</span>
+    <span class="foot-mark">— ❋ —</span>
+    <span class="foot-num">03</span>
+  </div>
+</section>
+
+
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">01</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Хлеб</h2>
+                <div class="cat-tag">— основа стола</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r093_i049.jpg" alt="Хлеб Деревенский" style="transform: scale(0.955);"></div>
+      <h3 class="card-title">Хлеб Деревенский</h3>
+      <p class="card-desc">Хлеб на пшеничной закваске из цельнозерновой муки</p>
+      <div class="card-meta">
+        <span class="card-weight">300г</span>
+        <span class="card-price">3,00<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r095_i046.jpg" alt="Хлеб Бородинский" style="transform: scale(0.948);"></div>
+      <h3 class="card-title">Хлеб Бородинский</h3>
+      <p class="card-desc">Ржаной хлеб на закваске с кориандром, солодом и квасным суслом</p>
+      <div class="card-meta">
+        <span class="card-weight">500г</span>
+        <span class="card-price">3,29<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r091_i047.jpg" alt="Хлеб &quot;Тартин&quot;" style="transform: scale(1.028);"></div>
+      <h3 class="card-title">Хлеб &quot;Тартин&quot;</h3>
+      <p class="card-desc">Хлеб на пшеничной закваске с льном, подсолнечником и кунжутом</p>
+      <div class="card-meta">
+        <span class="card-weight">250г</span>
+        <span class="card-price">3,40<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r096_i051.jpg" alt="Хлеб Новый Континент" style="transform: scale(0.979);"></div>
+      <h3 class="card-title">Хлеб Новый Континент</h3>
+      <p class="card-desc">Авторский хлеб с мёдом, ржаной мукой и квасным суслом</p>
+      <div class="card-meta">
+        <span class="card-weight">310г</span>
+        <span class="card-price">4,10<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Хлеб</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">04</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Хлеб</div>
+              <div class="cat-runner-tag">— основа стола</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r094_i050.jpg" alt="Хлеб Деревенский" style="transform: scale(0.929);"></div>
+      <h3 class="card-title">Хлеб Деревенский</h3>
+      <p class="card-desc">Хлеб на пшеничной закваске из цельнозерновой муки</p>
+      <div class="card-meta">
+        <span class="card-weight">450г</span>
+        <span class="card-price">4,39<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r097_i052.jpg" alt="Хлеб Новый Континент" style="transform: scale(0.972);"></div>
+      <h3 class="card-title">Хлеб Новый Континент</h3>
+      <p class="card-desc">Авторский хлеб с мёдом, ржаной мукой и квасным суслом</p>
+      <div class="card-meta">
+        <span class="card-weight">450г</span>
+        <span class="card-price">5,29<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r092_i048.jpg" alt="Хлеб &quot;Тартин&quot;" style="transform: scale(1.105);"></div>
+      <h3 class="card-title">Хлеб &quot;Тартин&quot;</h3>
+      <p class="card-desc">Хлеб на пшеничной закваске с льном, подсолнечником и кунжутом</p>
+      <div class="card-meta">
+        <span class="card-weight">500г</span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Хлеб</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">05</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">02</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Торты</h2>
+                <div class="cat-tag">— праздник в каждом срезе</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r049_i017.jpg" alt="Муравейник" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Муравейник</h3>
+      <p class="card-desc">Песочная крошка с варёной сгущёнкой и шоколадной глазурью</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">4,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r051_i019.jpg" alt="Нью-Баунти" style="transform: scale(0.941);"></div>
+      <h3 class="card-title">Нью-Баунти</h3>
+      <p class="card-desc">Шоколадно-кокосовые коржи со сливочным кремом и бананом</p>
+      <div class="card-meta">
+        <span class="card-weight">115г</span>
+        <span class="card-price">4,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r044_i013.jpg" alt="Клубничное наслаждение" style="transform: scale(0.961);"></div>
+      <h3 class="card-title">Клубничное наслаждение</h3>
+      <p class="card-desc">Бисквитные коржи с прослойкой клубники и творожно-сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">5,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r052_i020.jpg" alt="Прага" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Прага</h3>
+      <p class="card-desc">Шоколадный бисквит с абрикосовым джемом, в шоколадной глазури</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r055_i023.jpg" alt="Шоколадные Соты" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Шоколадные Соты</h3>
+      <p class="card-desc">Медовые коржи с шоколадным кремом и сливочным сыром</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r050_i018.jpg" alt="Новый Наполеон с заварным кремом" style="transform: scale(0.920);"></div>
+      <h3 class="card-title">Новый Наполеон с заварным кремом</h3>
+      <p class="card-desc">Слоёные коржи с нежным заварным кремом и слоёной крошкой</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,51<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Торты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">06</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Торты</div>
+              <div class="cat-runner-tag">— праздник в каждом срезе</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r045_i014.jpg" alt="Лакомый кусочек" style="transform: scale(0.961);"></div>
+      <h3 class="card-title">Лакомый кусочек</h3>
+      <p class="card-desc">Шоколадный бисквит с бананом и сливочным кремом, в шоколаде</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">5,85<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r042_i012.jpg" alt="Карамельная груша" style="transform: scale(0.981);"></div>
+      <h3 class="card-title">Карамельная груша</h3>
+      <p class="card-desc">Воздушный бисквит с грушей, миндалём и карамельным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">125г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r043_i099.jpg" alt="Вишневое наслаждение" style="transform: scale(0.961);"></div>
+      <h3 class="card-title">Вишневое наслаждение</h3>
+      <p class="card-desc">Бисквитные коржи с прослойкой вишни и творожно-сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r046_i100.jpg" alt="Лимонные Соты" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Лимонные Соты</h3>
+      <p class="card-desc">Медовые коржи с цитрусовым кремом из сливочного сыра</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r047_i015.jpg" alt="Ленинград" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Ленинград</h3>
+      <p class="card-desc">Песочные коржи с абрикосовым джемом, варёной сгущёнкой и шоколадной глазурью</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r053_i021.jpg" alt="Шоколадный апельсин" style="transform: scale(0.981);"></div>
+      <h3 class="card-title">Шоколадный апельсин</h3>
+      <p class="card-desc">Шоколадный бисквит с апельсиновой прослойкой и кремом из сливочного сыра</p>
+      <div class="card-meta">
+        <span class="card-weight">125г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r048_i016.jpg" alt="Морковный король" style="transform: scale(0.961);"></div>
+      <h3 class="card-title">Морковный король</h3>
+      <p class="card-desc">Морковно-ореховый бисквит с цедрой апельсина и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">6,49<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r056_i024.jpg" alt="Фисташковые Соты" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Фисташковые Соты</h3>
+      <p class="card-desc">Медовые коржи с фисташковой пастой и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">6,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r054_i022.jpg" alt="Шпинатный"></div>
+      <h3 class="card-title">Шпинатный</h3>
+      <p class="card-desc">Шпинатный бисквит с малиной, лимоном и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">130г</span>
+        <span class="card-price">6,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Торты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">07</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">03</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Чизкейки</h2>
+                <div class="cat-tag">— нежность в чистом виде</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r058_i026.jpg" alt="Нью-Йорк Карамель"></div>
+      <h3 class="card-title">Нью-Йорк Карамель</h3>
+      <p class="card-desc">Песочная основа с нежным творожным кремом под слоем карамели</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r059_i027.jpg" alt="Нью-Йорк Маковый"></div>
+      <h3 class="card-title">Нью-Йорк Маковый</h3>
+      <p class="card-desc">Песочная основа со сливочным творожным кремом и маком</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r060_i028.jpg" alt="Сан-Себастьян классический"></div>
+      <h3 class="card-title">Сан-Себастьян классический</h3>
+      <p class="card-desc">Кремовый чизкейк из творожного сыра с жжёной корочкой</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r057_i025.jpg" alt="Дубайский"></div>
+      <h3 class="card-title">Дубайский</h3>
+      <p class="card-desc">Песочная основа с творожным кремом, фисташкой и тестом катаифи</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">7,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Чизкейки</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">08</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">04</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Тарталетки</h2>
+                <div class="cat-tag">— хрустящая основа</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r036_i007.jpg" alt="Лимонная"></div>
+      <h3 class="card-title">Лимонная</h3>
+      <p class="card-desc">Песочная корзинка с лимонным курдом и шапочкой меренги</p>
+      <div class="card-meta">
+        <span class="card-weight">80г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r039_i098.jpg" alt="Фруктовый чизкейк"></div>
+      <h3 class="card-title">Фруктовый чизкейк</h3>
+      <p class="card-desc">Песочная корзинка с творожным кремом и сезонными фруктами</p>
+      <div class="card-meta">
+        <span class="card-weight">90г</span>
+        <span class="card-price">5,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r038_i009.jpg" alt="Мандариновая Тафита"></div>
+      <h3 class="card-title">Мандариновая Тафита</h3>
+      <p class="card-desc">Песочная корзинка с мандариновым муссом</p>
+      <div class="card-meta">
+        <span class="card-weight">85 г</span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r040_i010.jpg" alt="Шоколадная Вишня"></div>
+      <h3 class="card-title">Шоколадная Вишня</h3>
+      <p class="card-desc">Песочная корзинка с шоколадным ганашем и вишнёвой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">85 г</span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Тарталетки</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">09</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Тарталетки</div>
+              <div class="cat-runner-tag">— хрустящая основа</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r037_i008.jpg" alt="Орех Пекан"></div>
+      <h3 class="card-title">Орех Пекан</h3>
+      <p class="card-desc">Песочная корзинка с карамелизованными орехами пекан</p>
+      <div class="card-meta">
+        <span class="card-weight">70 г</span>
+        <span class="card-price">7,30<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r035_i006.jpg" alt="Дубайская"></div>
+      <h3 class="card-title">Дубайская</h3>
+      <p class="card-desc">Песочная корзинка с фисташковой пастой, тестом катаифи и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">70г</span>
+        <span class="card-price">7,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r041_i011.jpg" alt="Ягодная"></div>
+      <h3 class="card-title">Ягодная</h3>
+      <p class="card-desc">Песочная корзинка со сливочным кремом и ягодами в глазури</p>
+      <div class="card-meta">
+        <span class="card-weight">80г</span>
+        <span class="card-price">7,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Тарталетки</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">10</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">05</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Эклеры</h2>
+                <div class="cat-tag">— хрустящая нежность</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r085_i108.jpg" alt="Ванильный Заварной крем"></div>
+      <h3 class="card-title">Ванильный Заварной крем</h3>
+      <p class="card-desc">Заварное пирожное с нежным ванильным заварным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">65г</span>
+        <span class="card-price">4,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r087_i045.jpg" alt="Фисташковым заварным кремом"></div>
+      <h3 class="card-title">Фисташковым заварным кремом</h3>
+      <p class="card-desc"></p>
+      <div class="card-meta">
+        <span class="card-weight">65г</span>
+        <span class="card-price">4,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r089_i044.jpg" alt="Шоколадный Заварной крем"></div>
+      <h3 class="card-title">Шоколадный Заварной крем</h3>
+      <p class="card-desc">Заварное пирожное с густым шоколадным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">65г</span>
+        <span class="card-price">4,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Сникерс</h3>
+      <p class="card-desc">Шоколадный бисквит с арахисом, карамелью и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">85г</span>
+        <span class="card-price">5,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Малиновый</h3>
+      <p class="card-desc">Заварное пирожное с кремом из сливочного сыра и малиновой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">90г</span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Эклеры</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">11</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">06</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Пирожные</h2>
+                <div class="cat-tag">— штучные радости</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r075_i106.jpg" alt="Зимняя вишня" style="transform: scale(0.816);"></div>
+      <h3 class="card-title">Зимняя вишня</h3>
+      <p class="card-desc">Песочное пирожное с вишней, белковым кремом и ягодой</p>
+      <div class="card-meta">
+        <span class="card-weight">70г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r083_i042.jpg" alt="Эскимо тропик" style="transform: scale(0.951);"></div>
+      <h3 class="card-title">Эскимо тропик</h3>
+      <p class="card-desc">Чизкейк на палочке с тропическим муссом из манго и ананаса</p>
+      <div class="card-meta">
+        <span class="card-weight">95г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r084_i043.jpg" alt="Эскимо халвичный какао" style="transform: scale(0.951);"></div>
+      <h3 class="card-title">Эскимо халвичный какао</h3>
+      <p class="card-desc">Чизкейк на палочке с халвой и какао</p>
+      <div class="card-meta">
+        <span class="card-weight">95г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Творожное кольцо</h3>
+      <p class="card-desc">Заварное кольцо с нежным кремом из творога и маскарпоне</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r072_i035.jpg" alt="Вельвет Кофе-карамель" style="transform: scale(0.845);"></div>
+      <h3 class="card-title">Вельвет Кофе-карамель</h3>
+      <p class="card-desc">Слоёное или бисквитное тесто с авторской начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">75г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r073_i036.jpg" alt="Вельвет малина" style="transform: scale(0.816);"></div>
+      <h3 class="card-title">Вельвет малина</h3>
+      <p class="card-desc">Бисквит с белым шоколадом, малиновой прослойкой и сливочным сыром</p>
+      <div class="card-meta">
+        <span class="card-weight">70г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Пирожные</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">12</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Пирожные</div>
+              <div class="cat-runner-tag">— штучные радости</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r069_i104.jpg" alt="Ария манго-киви" style="transform: scale(0.951);"></div>
+      <h3 class="card-title">Ария манго-киви</h3>
+      <p class="card-desc">Слоёное или бисквитное тесто с авторской начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">95г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r070_i105.jpg" alt="Ария черника-персик" style="transform: scale(0.900);"></div>
+      <h3 class="card-title">Ария черника-персик</h3>
+      <p class="card-desc">Слоёное или бисквитное тесто с авторской начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">85г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r071_i034.jpg" alt="Ария шоколад-кокос" style="transform: scale(0.926);"></div>
+      <h3 class="card-title">Ария шоколад-кокос</h3>
+      <p class="card-desc">Слоёное или бисквитное тесто с авторской начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">90г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r074_i037.jpg" alt="Вельвет малина" style="transform: scale(0.926);"></div>
+      <h3 class="card-title">Вельвет малина</h3>
+      <p class="card-desc">Бисквит с белым шоколадом, малиновой прослойкой и сливочным сыром</p>
+      <div class="card-meta">
+        <span class="card-weight">90г</span>
+        <span class="card-price">7,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r076_i038.jpg" alt="Муссовое фисташка-малина"></div>
+      <h3 class="card-title">Муссовое фисташка-малина</h3>
+      <p class="card-desc">Фисташковый мусс с малиновой начинкой и кремом из сливочного сыра</p>
+      <div class="card-meta">
+        <span class="card-weight">105г</span>
+        <span class="card-price">8,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Пирожные</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">13</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">07</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Десерты</h2>
+                <div class="cat-tag">— маленькие шедевры</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r080_i039.jpg" alt="Орешек с вареной сгущенкой" style="transform: scale(0.650);"></div>
+      <h3 class="card-title">Орешек с вареной сгущенкой</h3>
+      <p class="card-desc">Песочный орешек с начинкой из варёной сгущёнки</p>
+      <div class="card-meta">
+        <span class="card-weight">15г</span>
+        <span class="card-price">0,80<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r079_i107.jpg" alt="Трубочка с вареной сгущенкой" style="transform: scale(0.760);"></div>
+      <h3 class="card-title">Трубочка с вареной сгущенкой</h3>
+      <p class="card-desc">Вафельная трубочка с варёной сгущёнкой и арахисом, в шоколаде</p>
+      <div class="card-meta">
+        <span class="card-weight">75г</span>
+        <span class="card-price">2,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r016_i086.jpg" alt="Крошка Картошка" style="transform: scale(0.650);"></div>
+      <h3 class="card-title">Крошка Картошка</h3>
+      <p class="card-desc">Бисквитная крошка с какао, сгущёнкой и арахисом в глазури</p>
+      <div class="card-meta">
+        <span class="card-weight">55г</span>
+        <span class="card-price">3,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r081_i040.jpg" alt="Печенье Лимон" style="transform: scale(0.784);"></div>
+      <h3 class="card-title">Печенье Лимон</h3>
+      <p class="card-desc">Песочное печенье со сгущённым молоком и лимонной нотой</p>
+      <div class="card-meta">
+        <span class="card-weight">80г</span>
+        <span class="card-price">3,98<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r082_i041.jpg" alt="Печенье Персик" style="transform: scale(0.809);"></div>
+      <h3 class="card-title">Печенье Персик</h3>
+      <p class="card-desc">Песочное печенье со сгущённым молоком и персиковой ноткой</p>
+      <div class="card-meta">
+        <span class="card-weight">85г</span>
+        <span class="card-price">3,98<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r007_i081.jpg" alt="Клубничный Тирамису" style="transform: scale(0.899);"></div>
+      <h3 class="card-title">Клубничный Тирамису</h3>
+      <p class="card-desc">Савоярди с кофейной пропиткой, крем маскарпоне и клубника</p>
+      <div class="card-meta">
+        <span class="card-weight">105г</span>
+        <span class="card-price">5,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Десерты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">14</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Десерты</div>
+              <div class="cat-runner-tag">— маленькие шедевры</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Сникерс</h3>
+      <p class="card-desc">Шоколадный бисквит с арахисом, карамелью и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,20<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r010_i083.jpg" alt="Сникерс" style="transform: scale(0.981);"></div>
+      <h3 class="card-title">Сникерс</h3>
+      <p class="card-desc">Шоколадный бисквит с арахисом, карамелью и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">125г</span>
+        <span class="card-price">5,40<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r006_i080.jpg" alt="Вишня в шоколаде" style="transform: scale(0.941);"></div>
+      <h3 class="card-title">Вишня в шоколаде</h3>
+      <p class="card-desc">Шоколадный бисквит с вишней и сливочным кремом, в шоколаде</p>
+      <div class="card-meta">
+        <span class="card-weight">115г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r008_i082.jpg" alt="Красный бархат дечерт"></div>
+      <h3 class="card-title">Красный бархат дечерт</h3>
+      <p class="card-desc">Бисквит «Красный бархат» со сливочным кремом и малиной</p>
+      <div class="card-meta">
+        <span class="card-weight">130г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Тирамису</h3>
+      <p class="card-desc">Савоярди с кофейной пропиткой и нежным кремом маскарпоне, посыпан какао</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r005_i079.jpg" alt="Павлова" style="transform: scale(0.832);"></div>
+      <h3 class="card-title">Павлова</h3>
+      <p class="card-desc">Воздушное безе с кремом из сливочного сыра, прослойкой вишни и мандарином</p>
+      <div class="card-meta">
+        <span class="card-weight">90г</span>
+        <span class="card-price">5,51<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Десерты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">15</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Десерты</div>
+              <div class="cat-runner-tag">— маленькие шедевры</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r013_i000.jpg" alt="Тирамису" style="transform: scale(0.920);"></div>
+      <h3 class="card-title">Тирамису</h3>
+      <p class="card-desc">Савоярди с кофейной пропиткой и нежным кремом маскарпоне, посыпан какао</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,70<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r014_i084.jpg" alt="Шоколадный бархат" style="transform: scale(0.961);"></div>
+      <h3 class="card-title">Шоколадный бархат</h3>
+      <p class="card-desc">Шоколадный бисквит со сливочным кремом и вишнёвой прослойкой, в шоколаде</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r067_i032.jpg" alt="Панна-котта Малина в шоколаде" style="transform: scale(0.920);"></div>
+      <h3 class="card-title">Панна-котта Малина в шоколаде</h3>
+      <p class="card-desc">Сливочный мусс на белом шоколаде с малиновой начинкой, в шоколаде</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r068_i033.jpg" alt="Панна-котта Персик в меду" style="transform: scale(0.920);"></div>
+      <h3 class="card-title">Панна-котта Персик в меду</h3>
+      <p class="card-desc">Сливочный мусс на белом шоколаде с мёдом и консервированным персиком</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r015_i085.jpg" alt="Шоколадный Фейерверк" style="transform: scale(0.877);"></div>
+      <h3 class="card-title">Шоколадный Фейерверк</h3>
+      <p class="card-desc">Шоколадный бисквит с муссом из белого шоколада и кремом со сливочным сыром</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">6,60<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Сникерс</h3>
+      <p class="card-desc">Шоколадный бисквит с арахисом, карамелью и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">200г</span>
+        <span class="card-price">10,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Десерты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">16</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">08</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Рулеты</h2>
+                <div class="cat-tag">— слой за слоем</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap baseline"><img src="photos/r017_i087.jpg" alt="Меренговый"></div>
+      <h3 class="card-title">Меренговый</h3>
+      <p class="card-desc">Меренговый рулет со сливочным кремом и свежими фруктами</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">5,94<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap baseline"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Меренговый Страчателла</h3>
+      <p class="card-desc">Меренговый рулет с кремом страчателла и шоколадными вкраплениями</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">5,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Рулеты</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">17</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">09</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Макароны</h2>
+                <div class="cat-tag">— цветная радуга вкусов</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r019_i088.jpg" alt="Банан в шоколаде"></div>
+      <h3 class="card-title">Банан в шоколаде</h3>
+      <p class="card-desc">Миндальное безе с начинкой из банана и молочного шоколада</p>
+      <div class="card-meta">
+        <span class="card-weight">28г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r020_i089.jpg" alt="BUBBLE GUM"></div>
+      <h3 class="card-title">BUBBLE GUM</h3>
+      <p class="card-desc">Миндальное безе с начинкой со вкусом bubble gum и воздушным рисом</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r021_i001.jpg" alt="Голубой сыр-груша-кедровый орех"></div>
+      <h3 class="card-title">Голубой сыр-груша-кедровый орех</h3>
+      <p class="card-desc">Миндальное безе с начинкой из голубого сыра, груши и кедрового ореха</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r022_i090.jpg" alt="Карамельный чизкейк"></div>
+      <h3 class="card-title">Карамельный чизкейк</h3>
+      <p class="card-desc">Миндальное безе с начинкой из карамели и сливочного сыра</p>
+      <div class="card-meta">
+        <span class="card-weight">27г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r023_i091.jpg" alt="Клубничный йогурт"></div>
+      <h3 class="card-title">Клубничный йогурт</h3>
+      <p class="card-desc">Миндальное безе с клубнично-йогуртовой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Макароны</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">18</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Макароны</div>
+              <div class="cat-runner-tag">— цветная радуга вкусов</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r024_i092.jpg" alt="Кокос-манго-маракуйя"></div>
+      <h3 class="card-title">Кокос-манго-маракуйя</h3>
+      <p class="card-desc">Миндальное безе с тропической начинкой: кокос, манго и маракуйя</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r025_i093.jpg" alt="Личи - Малина"></div>
+      <h3 class="card-title">Личи - Малина</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и малиновой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r026_i002.jpg" alt="Малиновый йогурт"></div>
+      <h3 class="card-title">Малиновый йогурт</h3>
+      <p class="card-desc">Миндальное безе с малиново-йогуртовой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r027_i094.jpg" alt="Цитрон"></div>
+      <h3 class="card-title">Цитрон</h3>
+      <p class="card-desc">Миндальное безе с цитрусовой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">28г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r028_i095.jpg" alt="Мандарин"></div>
+      <h3 class="card-title">Мандарин</h3>
+      <p class="card-desc">Миндальное безе с начинкой из мандарина</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r029_i003.jpg" alt="Сникерс"></div>
+      <h3 class="card-title">Сникерс</h3>
+      <p class="card-desc">Шоколадный бисквит с арахисом, карамелью и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Макароны</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">19</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Макароны</div>
+              <div class="cat-runner-tag">— цветная радуга вкусов</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r030_i096.jpg" alt="Соленая карамель"></div>
+      <h3 class="card-title">Соленая карамель</h3>
+      <p class="card-desc">Миндальное безе с начинкой из солёной карамели</p>
+      <div class="card-meta">
+        <span class="card-weight">27г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r031_i004.jpg" alt="Тирамису"></div>
+      <h3 class="card-title">Тирамису</h3>
+      <p class="card-desc">Савоярди с кофейной пропиткой и нежным кремом маскарпоне, посыпан какао</p>
+      <div class="card-meta">
+        <span class="card-weight">26г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r032_i005.jpg" alt="Фисташка-вишня"></div>
+      <h3 class="card-title">Фисташка-вишня</h3>
+      <p class="card-desc">Миндальное безе с фисташковой пастой и вишнёвой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap clean"><img src="photos/r033_i097.jpg" alt="Черничный йогурт"></div>
+      <h3 class="card-title">Черничный йогурт</h3>
+      <p class="card-desc">Миндальное безе с чернично-йогуртовой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><span class="card-img-empty">— фото в подготовке —</span></div>
+      <h3 class="card-title">Шоколадный мандарин</h3>
+      <p class="card-desc">Миндальное безе с тёмным шоколадом и мандарином</p>
+      <div class="card-meta">
+        <span class="card-weight">30г</span>
+        <span class="card-price">3,95<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Макароны</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">20</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">10</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Моти</h2>
+                <div class="cat-tag">— японская традиция</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r061_i029.jpg" alt="Апельсин"></div>
+      <h3 class="card-title">Апельсин</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и апельсиновой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r062_i101.jpg" alt="Малина"></div>
+      <h3 class="card-title">Малина</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и малиновой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r063_i030.jpg" alt="Кофейное"></div>
+      <h3 class="card-title">Кофейное</h3>
+      <p class="card-desc">Рисовое тесто моти с кофейным муссом</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r064_i031.jpg" alt="Белый Трюфель"></div>
+      <h3 class="card-title">Белый Трюфель</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и трюфельной начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r065_i102.jpg" alt="Вишня"></div>
+      <h3 class="card-title">Вишня</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и вишнёвой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r066_i103.jpg" alt="Черника"></div>
+      <h3 class="card-title">Черника</h3>
+      <p class="card-desc">Рисовое тесто моти с муссом из белого шоколада и черничной начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">60г</span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Моти</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">21</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">11</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Круассаны</h2>
+                <div class="cat-tag">— хруст по-французски</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r103_i058.jpg" alt="Классический"></div>
+      <h3 class="card-title">Классический</h3>
+      <p class="card-desc">Слоёное масляное тесто на дрожжах</p>
+      <div class="card-meta">
+        <span class="card-weight">70г</span>
+        <span class="card-price">2,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r104_i063.jpg" alt="Мак. Вишня"></div>
+      <h3 class="card-title">Мак. Вишня</h3>
+      <p class="card-desc">Слоёный круассан с маковой начинкой и вишней</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r105_i059.jpg" alt="Миндальное"></div>
+      <h3 class="card-title">Миндальное</h3>
+      <p class="card-desc">Слоёный круассан с миндальной мукой и лепестками миндаля</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r106_i060.jpg" alt="Ромовый Пломбир"></div>
+      <h3 class="card-title">Ромовый Пломбир</h3>
+      <p class="card-desc">Слоёный круассан со сливочным кремом-пломбир и ромовой ноткой</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r107_i061.jpg" alt="С вареной сгущенкой"></div>
+      <h3 class="card-title">С вареной сгущенкой</h3>
+      <p class="card-desc">Слоёный круассан с кремом из варёной сгущёнки</p>
+      <div class="card-meta">
+        <span class="card-weight">105г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r108_i062.jpg" alt="С карамелью"></div>
+      <h3 class="card-title">С карамелью</h3>
+      <p class="card-desc">Слоёный круассан с нежным карамельным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Круассаны</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">22</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Круассаны</div>
+              <div class="cat-runner-tag">— хруст по-французски</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r109_i064.jpg" alt="С шоколадным ганашем"></div>
+      <h3 class="card-title">С шоколадным ганашем</h3>
+      <p class="card-desc">Слоёный круассан с густым шоколадным ганашем</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r102_i057.jpg" alt="Биколор Клубничный"></div>
+      <h3 class="card-title">Биколор Клубничный</h3>
+      <p class="card-desc">Двухцветный слоёный круассан с клубникой и кремом маскарпоне</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r110_i065.jpg" alt="Фисташка малина"></div>
+      <h3 class="card-title">Фисташка малина</h3>
+      <p class="card-desc">Слоёный круассан с фисташковой пастой, малиной и сливочным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">110г</span>
+        <span class="card-price">5,51<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Круассаны</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">23</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">12</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Выпечка</h2>
+                <div class="cat-tag">— тёплая классика</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r115_i070.jpg" alt="Сдоба с корицей" style="transform: scale(0.900);"></div>
+      <h3 class="card-title">Сдоба с корицей</h3>
+      <p class="card-desc">Дрожжевая сдоба с ароматной корицей</p>
+      <div class="card-meta">
+        <span class="card-weight">80г</span>
+        <span class="card-price">1,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r116_i071.jpg" alt="Сдоба с маком" style="transform: scale(0.900);"></div>
+      <h3 class="card-title">Сдоба с маком</h3>
+      <p class="card-desc">Дрожжевая сдоба с маковой начинкой</p>
+      <div class="card-meta">
+        <span class="card-weight">80г</span>
+        <span class="card-price">1,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r117_i072.jpg" alt="Сдоба сметанник" style="transform: scale(0.975);"></div>
+      <h3 class="card-title">Сдоба сметанник</h3>
+      <p class="card-desc">Дрожжевая сдоба со сметаной</p>
+      <div class="card-meta">
+        <span class="card-weight">95г</span>
+        <span class="card-price">1,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r114_i069.jpg" alt="Пончик Донатс" style="transform: scale(0.900);"></div>
+      <h3 class="card-title">Пончик Донатс</h3>
+      <p class="card-desc">Воздушный пончик в глазури</p>
+      <div class="card-meta">
+        <span class="card-weight">75г</span>
+        <span class="card-price">2,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r111_i066.jpg" alt="Улитка с заварным кремом"></div>
+      <h3 class="card-title">Улитка с заварным кремом</h3>
+      <p class="card-desc">Слоёная улитка с изюмом и заварным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">2,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r112_i067.jpg" alt="Плие с ветчиной и сыром"></div>
+      <h3 class="card-title">Плие с ветчиной и сыром</h3>
+      <p class="card-desc">Слоёное плетение с ветчиной и сыром моцарелла</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">3,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Выпечка</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">24</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Выпечка</div>
+              <div class="cat-runner-tag">— тёплая классика</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r098_i053.jpg" alt="Даниш с вишней"></div>
+      <h3 class="card-title">Даниш с вишней</h3>
+      <p class="card-desc">Слоёная корзинка с вишнёвой начинкой и сметанным кремом</p>
+      <div class="card-meta">
+        <span class="card-weight">105г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r099_i054.jpg" alt="Даниш с голубикой"></div>
+      <h3 class="card-title">Даниш с голубикой</h3>
+      <p class="card-desc">Слоёная корзинка со свежей голубикой и желейной глазурью</p>
+      <div class="card-meta">
+        <span class="card-weight">120г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r100_i055.jpg" alt="Даниш с клубникой"></div>
+      <h3 class="card-title">Даниш с клубникой</h3>
+      <p class="card-desc">Слоёная корзинка со свежей клубникой и желейной глазурью</p>
+      <div class="card-meta">
+        <span class="card-weight">130г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r101_i056.jpg" alt="Даниш с персиком"></div>
+      <h3 class="card-title">Даниш с персиком</h3>
+      <p class="card-desc">Слоёная корзинка с консервированным персиком и желейной глазурью</p>
+      <div class="card-meta">
+        <span class="card-weight">130г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r113_i068.jpg" alt="Булочка Синабонн"></div>
+      <h3 class="card-title">Булочка Синабонн</h3>
+      <p class="card-desc">Дрожжевая булочка с корицей и кремом из сливочного сыра</p>
+      <div class="card-meta">
+        <span class="card-weight">100г</span>
+        <span class="card-price">4,99<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Выпечка</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">25</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-header">
+              <div class="cat-num">13</div>
+              <div class="cat-divider"></div>
+              <div class="cat-text">
+                <h2 class="cat-name">Стритфуд</h2>
+                <div class="cat-tag">— сытные перекусы</div>
+              </div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r121_i074.jpg" alt="Хот-дог Французский"></div>
+      <h3 class="card-title">Хот-дог Французский</h3>
+      <p class="card-desc">Сдобная булочка с сосисками, сыром, кетчупом, майонезом и горчицей</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">3,50<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r122_i075.jpg" alt="Бургер Мак"></div>
+      <h3 class="card-title">Бургер Мак</h3>
+      <p class="card-desc">Булочка для гамбургера с сыром амбер, маринованным огурцом, луком и майонезом</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">3,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r120_i073.jpg" alt="С ветчиной и сыром"></div>
+      <h3 class="card-title">С ветчиной и сыром</h3>
+      <p class="card-desc">Слоёный круассан с ветчиной, сыром моцарелла, томатом и салатом</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r125_i077.jpg" alt="Донер классический"></div>
+      <h3 class="card-title">Донер классический</h3>
+      <p class="card-desc">Хот-дог с фирменным соусом барбекю, маринованным огурцом и специями</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">4,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Стритфуд</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">26</span>
+          </div>
+        </section>
+        
+        <section class="page">
+          
+            <header class="cat-runner">
+              <div class="cat-runner-name">Стритфуд</div>
+              <div class="cat-runner-tag">— сытные перекусы</div>
+            </header>
+            
+          <div class="grid">
+            
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r124_i076.jpg" alt="Чикенбургер"></div>
+      <h3 class="card-title">Чикенбургер</h3>
+      <p class="card-desc">Бургерная булочка с куриной котлетой, салатом, томатом и соусом</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r126_i078.jpg" alt="Донер Бомбей"></div>
+      <h3 class="card-title">Донер Бомбей</h3>
+      <p class="card-desc">Хот-дог с пряным соусом «Бомбей», корейской морковью и специями</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">5,90<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+    <article class="card">
+      <div class="card-img-wrap"><img src="photos/r123_i109.jpg" alt="Цезарь"></div>
+      <h3 class="card-title">Цезарь</h3>
+      <p class="card-desc">Слоёный круассан с курицей, салатом, томатом и соусом цезарь</p>
+      <div class="card-meta">
+        <span class="card-weight"></span>
+        <span class="card-price">6,00<span class="currency">BYN</span></span>
+      </div>
+    </article>
+    
+            <div></div><div></div><div></div>
+          </div>
+          <div class="foot">
+            <span>Новый Континент &nbsp;·&nbsp; Стритфуд</span>
+            <span class="foot-mark">— ❋ —</span>
+            <span class="foot-num">27</span>
+          </div>
+        </section>
+        
+
+<section class="page contact">
+  <div class="contact-eyebrow">— Заказ и сотрудничество</div>
+  <h2 class="contact-title">Будем&nbsp;рады<br><em>сотрудничать</em></h2>
+  <p class="contact-lead">Доставка свежей продукции ежедневно. Партнёрская скидка 10%, гибкий ассортимент и&nbsp;индивидуальные условия для&nbsp;HoReCa.</p>
+
+  <div class="contact-blocks">
+    <div>
+      <div class="contact-block-label">— Менеджер по работе с&nbsp;партнёрами</div>
+      <div class="contact-block-value">отдел продаж<br><em>+375 (__) ___-__-__</em></div>
+    </div>
+    <div>
+      <div class="contact-block-label">— Электронная почта</div>
+      <div class="contact-block-value"><em>info@n-k.by</em></div>
+    </div>
+    <div>
+      <div class="contact-block-label">— Производство и&nbsp;офис</div>
+      <div class="contact-block-value">г.&nbsp;Жлобин</div>
+    </div>
+    <div>
+      <div class="contact-block-label">— Режим работы</div>
+      <div class="contact-block-value">ежедневно <em>с 9:00 до 21:00</em></div>
+    </div>
+  </div>
+
+  <div class="contact-terms">
+    <div class="contact-terms-title">Условия для&nbsp;партнёров</div>
+    <div class="contact-terms-grid">
+      <div class="contact-terms-item">
+        <div class="contact-terms-num">−10%</div>
+        <div class="contact-terms-text">Скидка от&nbsp;розничных цен на&nbsp;всю продукцию каталога</div>
+      </div>
+      <div class="contact-terms-item">
+        <div class="contact-terms-num">3&times;</div>
+        <div class="contact-terms-text">Регулярная доставка три раза в&nbsp;неделю по&nbsp;графику</div>
+      </div>
+      <div class="contact-terms-item">
+        <div class="contact-terms-num">∞</div>
+        <div class="contact-terms-text">Гибкий ассортимент и&nbsp;индивидуальные условия по&nbsp;объёму</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="contact-foot">
+    <div class="contact-logo"><svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.17 56.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e7b045;
+      }
+
+      .cls-2 {
+        fill: #000806;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <g>
+        <path class="cls-1" d="M56.64,26.58c-.05-.86-.15-1.72-.31-2.66-.42-2.8-1.3-5.57-2.61-8.18C48.93,6.04,39.2,0,28.35,0c-6.71,0-13.2,2.38-18.3,6.71-1.81,1.52-3.4,3.24-4.75,5.12-2.09,2.9-3.61,6.19-4.47,9.72C.27,23.75,0,26.03,0,28.35c0,2.53.32,4.97.96,7.31.75,2.8,1.91,5.43,3.43,7.82,2.43,3.84,5.77,7.06,9.7,9.36,4.2,2.45,9.07,3.85,14.25,3.85,1.3,0,2.56-.08,3.81-.26,4.73-.61,9.09-2.4,12.76-5.04,6.87-4.92,11.42-12.88,11.76-22,.02-.32.02-.68.02-1.05,0-.6-.02-1.18-.05-1.77h0ZM52.26,29.24c-.11,3.35-.92,6.51-2.28,9.36-1.86,3.89-4.71,7.19-8.26,9.57-1,.7-2.04,1.3-3.14,1.81h-.02c-.75.36-1.51.66-2.28.94-1.07.37-2.17.68-3.3.89-.37.08-.75.15-1.12.2-1.15.18-2.32.26-3.5.26-5.04,0-9.72-1.56-13.57-4.23-3.09-2.14-5.67-5.01-7.48-8.33-.54-.99-1.01-2.01-1.38-3.08h-.02c-.96-2.59-1.47-5.38-1.47-8.29,0-1.3.15-2.56.34-3.81.03.13.05.27.08.39l.88,2.75c.23.71,1.02,1.39,1.76,1.51l4.08.63c.7.1,1.43.7,1.7,1.36.03.05.05.11.07.16l.37,1.25c.23.71-.08,1.67-.7,2.11l-.86.63c-.6.44-1.25,1.39-1.43,2.12l-.42,1.7-.21.84c-.18.73.21,1.62.86,1.98.66.36,1.81.75,2.54.87h.03c.73.13,1.62.68,1.98,1.2.03.05.08.11.11.18.36.55.84,1.39,1.13,2.01l1.28,2.53c.32.68,1.17,1.23,1.86,1.23s1.15-.62,1.04-1.36l-.6-3.82c-.11-.75.11-1.88.5-2.53l.66-1.1c.41-.65.68-1.78.65-2.54l-.1-1.78c-.05-.75-.65-1.6-1.35-1.9l-2.53-1.05c-.7-.29-1.46-1.12-1.69-1.83l-.63-1.94c-.15-.45-.29-1.12-.36-1.72-.07-.34-.1-.68-.1-.94v-.07c-.02-.75.39-1.83.89-2.38l.32-.36c.21-.24.45-.36.66-.37.29-.02.55.18.7.55.26.65.71,1.07,1.02.92.32-.14,1.68-1.82,2.37-2.59.38-.43.76-1.03.89-1.19.51-.62.66-1.06.85-1.79l1.15-4.26c.19-.73-.11-1.73-.68-2.22l-.73-.62c-.57-.48-1.46-1.33-1.99-1.86l-.19-.19s-.07-.07-.11-.1c-.55-.49-1.52-.87-2.22-.87h-4.11c-.32,0-.81-.02-1.31,0,1.57-1.33,3.3-2.45,5.17-3.34.02-.02.03-.02.05-.02,3.11-1.47,6.58-2.3,10.22-2.3,8,0,15.1,3.95,19.42,9.99l-5.2-.7c-.44-.07-.97.05-1.44.27-.32.15-.82.4-1.02.64,0,0-2.21,1.59-2.77,2.29-.57.72-1.7,3.02-1.7,3.02l-.15.32c-.47.58-.8,1.68-.84,2.43l-.13,1.91c-.05.75.48,1.12,1.03.62l.85-.43c.55-.5,1.56-.96,2.3-.96l.6.03c.76,0,1.35.13,1.52.86l.16.63c.18.73.11,1.73-.13,2.25-.26.5-1.07.88-1.83.79l-1.99-.18c-.75-.08-1.77.31-2.28.87l-.66.73c-.11.13-.23.29-.32.47-.32.57-.5,1.33-.42,1.89l.27,1.88c.02.18.08.37.16.57.23.62.66,1.26,1.12,1.6l.94.68c.6.45,1.09,1.43,1.09,2.19l-.07,4.39c-.02.65.36,1.39.84,1.76.08.07.16.11.24.16.62.31,1.52.1,2.03-.47l.91-1.01c.5-.57,1.13-1.6,1.41-2.3,0,0,.58-1.52.58-1.83,0-.29.5-.54.5-.54.68-.31,1.46-.99,1.72-1.51.19-.41.47-.99.66-1.47.06-.13.11-.26.14-.37.18-.49.81-1.28,1.41-1.73l.1-.08c.6-.47,1.28-.69,1.69-1.33l.76-.94c.11-.18.12-.45.14-.58,0-.06-.18-.42-.2-.5-.1-.21-.68-.41-1.1-.33l-.77-.15c-.75-.13-.76-.03-1.37-.47l-.58-.41c-.61-.42-1.02-1.02-.91-1.31.13-.29.78-.23,1.43.14l.49.28c.65.37,1.8.63,2.54.58l.11-.02.5-.03c.75-.07,1.54-.44,1.75-.84.16-.31.29-.75.36-1.09.03.41.05.81.05,1.23,0,.29,0,.58-.01.89h0Z"/>
+        <path class="cls-1" d="M45.42,42.52c-.08.49-.42,1.17-.75,1.51-.29.32-.76.68-1.09.84-.03.02-.07.03-.1.05-.34.15-.66.13-.73-.03-.05-.15-.05-.49.02-.73.07-.26.47-.92.91-1.49.34-.45.78-.83,1.1-.95.08-.05.16-.07.23-.07.29,0,.49.39.41.87h0Z"/>
+      </g>
+      <g>
+        <g>
+          <path class="cls-2" d="M73.33,40.16l-1.53,1.64v3.62s-4.06,0-4.06,0v-14.5s4.06,0,4.06,0v6.03s5.61-6.03,5.61-6.03h4.51s-5.92,6.42-5.92,6.42l6.23,8.08h-4.76s-4.14-5.26-4.14-5.26Z"/>
+          <path class="cls-2" d="M85.89,44.73c-1.22-.65-2.18-1.55-2.88-2.69-.7-1.15-1.05-2.44-1.05-3.87,0-1.44.35-2.73,1.05-3.87.7-1.15,1.66-2.04,2.88-2.69,1.22-.65,2.6-.97,4.13-.97,1.53,0,2.91.32,4.13.97,1.22.65,2.18,1.55,2.88,2.69.7,1.15,1.05,2.44,1.05,3.87,0,1.44-.35,2.73-1.05,3.87-.7,1.15-1.66,2.04-2.88,2.69-1.22.65-2.6.97-4.13.97-1.53,0-2.91-.32-4.13-.97ZM92.01,41.79c.59-.35,1.06-.83,1.41-1.46.34-.63.52-1.35.52-2.16,0-.81-.17-1.54-.52-2.16-.35-.63-.81-1.11-1.41-1.46-.59-.34-1.26-.52-1.99-.52-.73,0-1.39.17-1.99.52-.59.35-1.06.83-1.41,1.46-.35.63-.52,1.35-.52,2.16,0,.81.17,1.54.52,2.16.35.63.81,1.11,1.41,1.46.59.35,1.26.52,1.99.52.73,0,1.39-.17,1.99-.52Z"/>
+          <path class="cls-2" d="M114.06,30.92v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M128.85,34.16h-4.43s0,11.25,0,11.25h-4.04s0-11.24,0-11.24h-4.45s0-3.25,0-3.25h12.92s0,3.25,0,3.25Z"/>
+          <path class="cls-2" d="M130.73,30.91h4.04s0,8.51,0,8.51l5.98-8.51h3.85s0,14.5,0,14.5h-4.04s0-8.49,0-8.49l-5.96,8.49h-3.87s0-14.5,0-14.5Z"/>
+          <path class="cls-2" d="M161.5,30.91v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M176.25,42.23v3.17s-11.64,0-11.64,0v-14.5s11.37,0,11.37,0v3.17s-7.31,0-7.31,0v2.44s6.44,0,6.44,0v3.06s-6.44,0-6.44,0v2.65s7.58,0,7.58,0Z"/>
+          <path class="cls-2" d="M192.38,30.9v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M207.17,34.15h-4.43s0,11.25,0,11.25h-4.04s0-11.24,0-11.24h-4.45s0-3.25,0-3.25h12.92s0,3.25,0,3.25Z"/>
+        </g>
+        <g>
+          <path class="cls-2" d="M81.53,11.64v14.5s-4.1,0-4.1,0v-5.65s-5.59,0-5.59,0v5.65s-4.1,0-4.1,0v-14.5s4.1,0,4.1,0v5.45s5.59,0,5.59,0v-5.45s4.1,0,4.1,0Z"/>
+          <path class="cls-2" d="M87.63,25.46c-1.22-.65-2.18-1.55-2.88-2.69-.7-1.15-1.05-2.44-1.05-3.87,0-1.44.35-2.73,1.05-3.87.7-1.15,1.66-2.04,2.88-2.69,1.22-.65,2.6-.97,4.13-.97s2.91.32,4.13.97c1.22.65,2.18,1.55,2.88,2.69.7,1.15,1.05,2.44,1.05,3.87,0,1.44-.35,2.73-1.05,3.87-.7,1.15-1.66,2.04-2.88,2.69-1.22.65-2.6.97-4.13.97-1.53,0-2.91-.32-4.13-.97ZM93.75,22.51c.59-.35,1.06-.83,1.41-1.46.34-.63.52-1.35.52-2.16,0-.81-.17-1.54-.52-2.16-.35-.63-.81-1.11-1.41-1.46-.59-.34-1.26-.52-1.99-.52-.73,0-1.39.17-1.99.52-.59.35-1.06.83-1.41,1.46-.35.63-.52,1.35-.52,2.16,0,.81.17,1.54.52,2.16.35.63.81,1.11,1.41,1.46.59.35,1.26.52,1.99.52.73,0,1.39-.17,1.99-.52Z"/>
+          <path class="cls-2" d="M114.53,19.84c.45.58.67,1.3.67,2.15,0,1.28-.5,2.3-1.5,3.03-1,.74-2.42,1.11-4.26,1.11h-7.43s0-14.49,0-14.49h7.04c1.74,0,3.09.33,4.05.98.96.66,1.44,1.58,1.44,2.79,0,.7-.17,1.33-.51,1.86-.34.54-.82.97-1.46,1.28.86.28,1.51.7,1.96,1.28ZM106.05,17.44h2.61c1.16,0,1.74-.48,1.74-1.43,0-.95-.58-1.43-1.74-1.43h-2.61s0,2.86,0,2.86ZM111.06,21.68c0-.98-.59-1.47-1.78-1.47h-3.23s0,2.98,0,2.98h3.23c1.19,0,1.78-.5,1.78-1.51Z"/>
+          <path class="cls-2" d="M128.93,17.44c.97.79,1.45,1.97,1.45,3.53,0,1.67-.54,2.95-1.61,3.83-1.08.88-2.57,1.33-4.49,1.33h-6.85s0-14.49,0-14.49h4.04s0,4.62,0,4.62h3.35c1.78,0,3.15.4,4.12,1.19ZM125.65,22.63c.41-.37.61-.9.61-1.57,0-1.26-.75-1.88-2.26-1.88h-2.55s0,4.02,0,4.02h2.55c.69,0,1.24-.19,1.65-.56ZM131.97,11.63h4.04s0,14.5,0,14.5h-4.04s0-14.5,0-14.5Z"/>
+          <polygon class="cls-2" points="139.14 11.63 143.18 11.63 143.18 20.14 149.16 11.63 153.01 11.63 153.01 26.13 148.98 26.13 148.98 17.64 143.01 26.13 139.14 26.13 139.14 11.63"/>
+          <polygon class="cls-2" points="144.92 9.84 146.8 4.82 151.11 4.82 147.35 9.84 144.92 9.84"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg></div>
+    <div class="contact-tag">Свежее. Своё. Каждый&nbsp;день.<br>— с 2006 года —</div>
+  </footer>
+</section>
+
+</body>
+</html>
